@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Grocery.App.Views.LoginView"
+             Title="Inloggen">
+    <VerticalStackLayout Padding="30">
+        <Label Text="Inloggen" FontSize="24" HorizontalOptions="Center" />
+        <Entry Placeholder="Gebruikersnaam" Text="{Binding Username}" />
+        <Entry Placeholder="Wachtwoord" IsPassword="True" Text="{Binding Password}" />
+        <Button Text="Inloggen" Command="{Binding LoginCommand}" />
+        <Label Text="{Binding Message}" TextColor="Red" />
+        <Label HorizontalOptions="Center">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Nog geen account? " />
+                    <Span Text="Registreer hier."
+                          TextDecorations="Underline"
+                          TextColor="Blue">
+                        <Span.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding NavigateToRegisterCommand}" />
+                        </Span.GestureRecognizers>
+                    </Span>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+    </VerticalStackLayout>
+</ContentPage>
